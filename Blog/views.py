@@ -1,3 +1,12 @@
 from django.shortcuts import render
+from .form import MemberForm
 
-# Create your views here.
+def hello(request):
+    context = {
+        'hello' : 'hello'
+    }
+    return render(request, 'hello.html', context)
+
+def login(request):
+    form = MemberForm()
+    return render(request, 'login.html', {'form':form})

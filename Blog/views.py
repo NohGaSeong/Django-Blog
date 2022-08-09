@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .form import MemberForm
+from .form import MemberForm, SignupForm
 
 def hello(request):
     context = {
@@ -10,3 +10,7 @@ def hello(request):
 def login(request):
     form = MemberForm()
     return render(request, 'login.html', {'form':form})
+
+def signup(request):
+    form = SignupForm()
+    return render(request, 'signup.html', {'form':form})

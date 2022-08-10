@@ -5,8 +5,9 @@
         <title>Sign up</title>
     </head>
     <body>
-        <form action="signup/" method="POST">
-            {% csrf_token %} {{ form.as_p }}
+        <form action="/login/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
             <input type="submit" value="signup" />
         </form>
     </body>

@@ -5,8 +5,9 @@
     <title>Login</title>
 </head>
 <body>
-    <form action = "login/" method = "POST">
-        {{ form }}
+    <form action = "{% url 'main' %}" method = "POST">
+        {% csrf_token %}
+        {{ form.as_p }}
         {% comment %} 
         <input type = "text" placeholder="ID">
         <input type = "password" placeholder="PassWord"> 

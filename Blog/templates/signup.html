@@ -1,13 +1,13 @@
-<!DOCTYPE>
+<!DOCTYPE >
 <html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>Sign up</title>
-</head>
-<body>
-    <form action = "signup/"method = "post">
-        {{ form.as_p }}
-        <input type = "submit" value = "signup">
-    </form>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Sign up</title>
+    </head>
+    <body>
+        <form action="signup/" method="POST">
+            {% csrf_token %} {{ form.as_p }}
+            <input type="submit" value="signup" />
+        </form>
+    </body>
 </html>

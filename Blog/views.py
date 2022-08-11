@@ -30,7 +30,7 @@ def main(request):
     if request.method == 'POST':
         memberName = request.POST.get('memberName')
         password = request.POST.get('password')
-        member = Member.objects.get(memberName = memberName, password = password)
+        member = member.objects.get(memberName = memberName, password = password)
         if member is not None:
             request.session['memberid'] = member.id
             return render(request, 'main.html', {'memberId' : member.name})

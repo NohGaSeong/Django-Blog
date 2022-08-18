@@ -1,7 +1,7 @@
 import logging
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import is_valid_path
-from .form import MemberForm, SignupForm
+from .form import MemberForm, SignupForm, BoardWriteForm
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 
@@ -37,3 +37,14 @@ def main(request):
         else :
             return redirect('login')
     return render(request, 'main.html')
+
+def write(request):
+    if request.method == 'POST':
+        form = BoardWriteForm(request.POST)
+        if form.is_vaild():
+            form.save()
+            return redirect('main')
+    member_id = request.session['memberId']
+    member = get_object_or_404(Member, pk = member_id)
+    form = BoardWriteForm(initial={'member':member})
+    return render(request, 'write.html', {'form':form, 'member':member})

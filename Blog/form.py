@@ -21,3 +21,13 @@ class SignupForm(forms.ModelForm):
             'memberName': forms.TextInput(attrs={'class':'memberName'}),
             'password' : forms.PasswordInput(attrs={'class':'pw1'}),
         }
+
+class BoardWriteForm(forms.ModelForm):
+    class Meta:
+        model = Board
+        fileds = ['title','content','member']
+        widgets = {
+            'title' : forms.TextInput(attrs={'class':'title'}),
+            'content' : forms.TextInput(attrs={'class':'content'}),
+            'member': forms.HiddenInput
+        }

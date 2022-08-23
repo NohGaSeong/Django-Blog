@@ -1,7 +1,7 @@
 import logging
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import is_valid_path
-from .form import MemberForm, SignupForm, BoardWriteForm, Board     
+from .form import MemberForm, SignupForm, BoardWriteForm, Board, Member
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 

@@ -5,8 +5,20 @@
     <title>Main</title>
 </head>
 <body>
-    hello? this page is main page.
-    {{ memberId }}
-    <a href = "{% url 'write' %}">글 등록하기</a>
+   <table border = "1">
+    <tr>
+        <td>번호</td>
+        <td>제목</td>
+        <td>등록시간</td>
+        <td>수정시간</td>
+    </tr>
+    {% for item in boardList %}
+    <tr>
+        <td>{{ item.id }}</td>
+        <td><a>{{ item.title }}</a></td>
+        <td>{{ item.createDate }}</td>
+        <td>{{ item.updateDate }}</td>
+    </tr>
+    {% endfor %}
 </body>
 </html>

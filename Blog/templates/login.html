@@ -1,18 +1,16 @@
-<!DOCTYPE>
-<html lang = "en">
-<head>
-    <meta charset = "UTF-8"/>
-    <title>Login</title>
-</head>
-<body>
-    <form action = "{% url 'main' %}" method = "POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% comment %} 
-        <input type = "text" placeholder="ID">
-        <input type = "password" placeholder="PassWord"> 
-        {% endcomment %}
-        <input type = "submit" value = "Login">
-    </form> 
-</body>
+<!DOCTYPE >
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Login</title>
+    </head>
+    <body>
+        <form action="{% url 'main' %}" method="POST">
+            {% csrf_token %} {{ form.as_p }} {% comment %}
+            <input type="text" placeholder="ID" />
+            <input type="password" placeholder="PassWord" />
+            {% endcomment %}
+            <input type="submit" value="Login" />
+        </form>
+    </body>
 </html>

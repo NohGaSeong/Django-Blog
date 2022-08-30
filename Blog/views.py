@@ -10,7 +10,7 @@ def hello(request):
         'hello' : 'hello Django!'
     }
     return render(request, 'hello.html', context)
-
+ㄷ
 def login(request):
     form = MemberForm()
     return render(request, 'login.html', {'form':form})
@@ -51,4 +51,15 @@ def write(request):
     member = get_object_or_404(Member, pk = member_id)
     form = BoardWriteForm(initial={'member':member})
     return render(request, 'write.html', {'form':form, 'member':member})
-    
+
+def detail(request, board):
+    board = get_object_or_404(Board, pk=boardid)
+    try:
+        session = request.session['method']
+        context = {
+            'board' : board,
+            'session' : session,
+        }
+        return render(request, 'detail.html', context)
+    except KeyError:
+        return redirect('main')

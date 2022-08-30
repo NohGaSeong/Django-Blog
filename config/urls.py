@@ -10,4 +10,5 @@ urlpatterns = [
    path('signup/', views.signup, name = 'signUp'),
    path('main/',views.main, name = 'main' ),
    path('write/', views.write, name = 'write'),
+   path('detail/<int:boardid>/',views.detail, name = 'detail'),
    ]

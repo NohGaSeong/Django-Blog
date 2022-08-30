@@ -15,10 +15,11 @@
     {% for item in boardList %}
     <tr>
         <td>{{ item.id }}</td>
-        <td><a>{{ item.title }}</a></td>
+        <td><a href = "{% url 'detail' board=item.id %}">{{ item.title }}</a></td>
         <td>{{ item.createDate }}</td>
         <td>{{ item.updateDate }}</td>
     </tr>
     {% endfor %}
+    </table>
 </body>
 </html>
